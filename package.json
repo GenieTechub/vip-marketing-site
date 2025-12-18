@@ -1,0 +1,18 @@
+{
+  "name": "vip-marketing-site",
+  "version": "1.0.0",
+  "description": "Vivasaayipulla Angadi - Fresh Farm to Table Marketing Site",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3001",
+    "dev": "npx serve . -l 3001"
+  },
+  "keywords": [
+    "marketing",
+    "agriculture",
+    "farm-to-table"
+  ],
+  "author": "",
+  "license": "ISC"
+}
+

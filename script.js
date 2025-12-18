@@ -48,11 +48,74 @@ function currentSlide(index) {
     showSlide(currentSlideIndex);
 }
 
-// Pause auto-slide on hover
+// Touch/Swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
 const carouselContainer = document.querySelector('.carousel-container');
 if (carouselContainer) {
+    // Touch events for swipe
+    carouselContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carouselContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    // Mouse drag support for desktop
+    let isDragging = false;
+    let dragStartX = 0;
+
+    carouselContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        dragStartX = e.clientX;
+        stopAutoSlide();
+    });
+
+    carouselContainer.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+
+    carouselContainer.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const dragEndX = e.clientX;
+        const diff = dragStartX - dragEndX;
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                changeSlide(1); // Swipe left - next slide
+            } else {
+                changeSlide(-1); // Swipe right - previous slide
+            }
+        }
+        startAutoSlide();
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        isDragging = false;
+        startAutoSlide();
+    });
+
+    // Pause auto-slide on hover (desktop only)
     carouselContainer.addEventListener('mouseenter', stopAutoSlide);
     carouselContainer.addEventListener('mouseleave', startAutoSlide);
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            changeSlide(1); // Swipe left - next slide
+        } else {
+            changeSlide(-1); // Swipe right - previous slide
+        }
+    }
 }
 
 // Mobile Navigation Toggle
@@ -365,9 +428,107 @@ const safeQuerySelector = (selector) => {
     }
 };
 
+// Language switching functionality
+let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+function updateLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('selectedLanguage', lang);
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+    
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                // For input elements, update placeholder
+                element.placeholder = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+    
+    // Update placeholder attributes
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+        }
+    });
+    
+    // Update current language display
+    const langNames = { en: 'EN', ta: 'தமிழ்', ml: 'മലയാളം' };
+    const currentLangSpan = document.getElementById('currentLang');
+    if (currentLangSpan) {
+        currentLangSpan.textContent = langNames[lang] || lang.toUpperCase();
+    }
+    
+    // Update document title
+    const titles = {
+        en: 'Vivasaayipulla Angadi - Fresh Farm to Table',
+        ta: 'விவசாயிபுள்ள அங்காடி - புதிய பண்ணை முதல் மேசை',
+        ml: 'വിവസായിപുല്ല അങ്ങാടി - പുതിയ ഫാം മുതൽ ടേബിൾ വരെ'
+    };
+    document.title = titles[lang] || titles.en;
+}
+
+// Language switcher dropdown functionality
+function initLanguageSwitcher() {
+    const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const langOptions = document.querySelectorAll('.lang-option');
+    
+    if (langBtn && langDropdown) {
+        // Toggle dropdown
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = langDropdown.classList.contains('active');
+            // Close all dropdowns first
+            document.querySelectorAll('.lang-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+            document.querySelectorAll('.language-switcher').forEach(switcher => {
+                switcher.classList.remove('active');
+            });
+            // Toggle current dropdown
+            if (!isActive) {
+                langDropdown.classList.add('active');
+                langBtn.closest('.language-switcher').classList.add('active');
+            }
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                langDropdown.classList.remove('active');
+                langBtn.closest('.language-switcher').classList.remove('active');
+            }
+        });
+        
+        // Handle language selection
+        langOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                const selectedLang = option.getAttribute('data-lang');
+                updateLanguage(selectedLang);
+                langDropdown.classList.remove('active');
+            });
+        });
+    }
+}
+
 // Initialize all functionality safely
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Vivasaayipulla Angadi website loaded successfully!');
+    
+    // Initialize language switcher
+    initLanguageSwitcher();
+    
+    // Load saved language or default to English
+    updateLanguage(currentLanguage);
     
     // Initialize carousel
     if (slides.length > 0) {

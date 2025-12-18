@@ -2,41 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Vivasaayipulla Angadi - Fresh Farm to Table</title>
     <meta name="description" content="Connect with local farmers and discover fresh, organic produce. Your trusted marketplace for sustainable agriculture and farm-fresh products.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="translations.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="logoo.svg" alt="Vivasaayipulla Angadi Logo" class="logo-img">
-                <h2>Vivasaayipulla Angadi</h2>
+                <img src="logo.svg" alt="Vivasaayipulla Angadi Logo" class="logo-img">
+                <h2 data-i18n="navLogoName">Vivasaayipulla Angadi</h2>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link" data-i18n="navHome">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#features" class="nav-link" data-i18n="navFeatures">Features</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#products" class="nav-link">Products</a>
+                    <a href="#products" class="nav-link" data-i18n="navStatistics">Statistics</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#about" class="nav-link" data-i18n="navAbout">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#download" class="nav-link">Download App</a>
+                    <a href="#download" class="nav-link" data-i18n="navDownload">Download App</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
                 </li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn" id="langBtn">
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="#" class="lang-option" data-lang="en">English</a>
+                    <a href="#" class="lang-option" data-lang="ta">தமிழ்</a>
+                    <a href="#" class="lang-option" data-lang="ml">മലയാളം</a>
+                </div>
+            </div>
             <div class="nav-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -50,55 +62,32 @@
         <div class="carousel-container">
             <div class="carousel-slides">
                 <div class="slide active">
-                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
                     <div class="slide-content">
-                        <div class="hero-logo">
-                            <img src="logoo.svg" alt="Vivasaayipulla Angadi Logo" class="hero-logo-img">
-                        </div>
-                        <h1 class="hero-title">Welcome to Vivasaayipulla Angadi</h1>
-                        <p class="hero-description">
+                        <h1 class="hero-title" data-i18n="heroTitle1">Welcome to Vivasaayipulla Angadi</h1>
+                        <p class="hero-description" data-i18n="heroDesc1">
                             The Future of Agriculture Marketplace. Buy and sell all kinds of agriculture products directly from farmers, sellers, and local shops. We connect people, products, and services in one place – easy, affordable, and trustworthy.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="#products" class="btn btn-primary">Shop Now</a>
-                            <a href="#about" class="btn btn-secondary">Learn More</a>
-                        </div>
                     </div>
                 </div>
                 <div class="slide">
-                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
                     <div class="slide-content">
-                        <h1 class="hero-title">Smart Agriculture Platform</h1>
-                        <p class="hero-description">
-                            With powerful features like voice search, live chat, and multilingual support, we make farming smarter and business easier. Connect directly with farmers and sellers without middlemen.
+                        <h1 class="hero-title" data-i18n="heroTitle2">Home Gadgets & Products</h1>
+                        <p class="hero-description" data-i18n="heroDesc2">
+                            Shop for kitchen gadgets and essential home products at low prices. Find everything you need for your home from trusted sellers. Quality products available at affordable prices.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="#products" class="btn btn-primary">Explore Products</a>
-                            <a href="#features" class="btn btn-secondary">Our Mission</a>
-                        </div>
                     </div>
                 </div>
                 <div class="slide">
-                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
                     <div class="slide-content">
-                        <h1 class="hero-title">Direct from Farmers</h1>
-                        <p class="hero-description">
+                        <h1 class="hero-title" data-i18n="heroTitle3">Direct from Farmers</h1>
+                        <p class="hero-description" data-i18n="heroDesc3">
                             At Vivasaayipulla Angadi, our mission is to make agriculture products and services accessible to everyone. We provide a platform where anyone can sell or buy products directly without middlemen.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="#products" class="btn btn-primary">Visit Market</a>
-                            <a href="#contact" class="btn btn-secondary">Get Involved</a>
-                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-btn prev" onclick="changeSlide(-1)">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-btn next" onclick="changeSlide(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
             <div class="carousel-indicators">
                 <span class="indicator active" onclick="currentSlide(1)"></span>
@@ -112,90 +101,89 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose Vivasaayipulla Angadi?</h2>
-                <p>Experience the difference with our sustainable agriculture features</p>
+                <h2 data-i18n="featuresTitle">Why Choose Vivasaayipulla Angadi?</h2>
+                <p data-i18n="featuresSubtitle">Experience the difference with our sustainable agriculture features</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h3>100% Organic</h3>
-                    <p>All our products are certified organic, grown without harmful pesticides or chemicals.</p>
+                    <h3 data-i18n="feature1Title">100% Organic</h3>
+                    <p data-i18n="feature1Desc">All our products are certified organic, grown without harmful pesticides or chemicals.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-truck"></i>
                     </div>
-                    <h3>Farm Fresh Delivery</h3>
-                    <p>Direct from farm to your doorstep with our eco-friendly delivery system.</p>
+                    <h3 data-i18n="feature2Title">Farm Fresh Delivery</h3>
+                    <p data-i18n="feature2Desc">Direct from farm to your doorstep with our eco-friendly delivery system.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Support Local Farmers</h3>
-                    <p>Every purchase directly supports local farming communities and sustainable practices.</p>
+                    <h3 data-i18n="feature3Title">Support Local Farmers</h3>
+                    <p data-i18n="feature3Desc">Every purchase directly supports local farming communities and sustainable practices.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-seedling"></i>
                     </div>
-                    <h3>Sustainable Farming</h3>
-                    <p>Promoting environmentally friendly farming methods for a better future.</p>
+                    <h3 data-i18n="feature4Title">Sustainable Farming</h3>
+                    <p data-i18n="feature4Desc">Promoting environmentally friendly farming methods for a better future.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- Platform Statistics Section -->
     <section id="products" class="products">
         <div class="container">
             <div class="section-header">
-                <h2>Fresh Farm Products</h2>
-                <p>Discover our seasonal organic produce and farm-fresh products</p>
+                <h2 data-i18n="statsTitle">Our Growing Community</h2>
+                <p data-i18n="statsSubtitle">Join thousands of customers and sellers who use our platform every day</p>
             </div>
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
                         <div class="product-placeholder" style="background-image: url('https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');">
                             <div class="product-overlay">
-                                <i class="fas fa-apple-alt"></i>
+                                <i class="fas fa-store"></i>
                             </div>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Fresh Vegetables</h3>
-                        <p>Organic, locally grown seasonal vegetables</p>
-                        <span class="price">$12.99/lb</span>
+                        <h3 data-i18n="marketTitle">Market</h3>
+                        <p data-i18n="marketDesc">50,000+ local farmers and small shop owners, home business and women entrepreneurs sell their products on our platform</p>
+                        <span class="price">50,000+</span>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder" style="background-image: url('https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');">
+                        <div class="product-placeholder" style="background-image: url('https://images.unsplash.com/photo-1556910096-6f5e72db6803?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');">
                             <div class="product-overlay">
-                                <i class="fas fa-seedling"></i>
+                                <i class="fas fa-shopping-bag"></i>
                             </div>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Organic Herbs</h3>
-                        <p>Fresh aromatic herbs for cooking and wellness</p>
-                        <span class="price">$8.99/bunch</span>
+                        <h3 data-i18n="shopTitle">Shop</h3>
+                        <p data-i18n="shopDesc">Kitchen gadgets and essential products for your home</p>
+                        <span class="price">8,000+</span>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');">
+                        <div class="product-placeholder" style="background-image: url('images/robot.png');">
                             <div class="product-overlay">
-                                <i class="fas fa-wheat-awn"></i>
+                                <i class="fas fa-robot"></i>
                             </div>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Farm Grains</h3>
-                        <p>Whole grains and cereals from local farms</p>
-                        <span class="price">$15.99/bag</span>
+                        <h3 data-i18n="servicesTitle">Services</h3>
+                        <p data-i18n="servicesDesc">Mobile recharge, TV recharge, various recharges, AI agriculture support, emergency services and more available</p>
                     </div>
                 </div>
             </div>
@@ -207,33 +195,33 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Vivasaayipulla Angadi</h2>
-                    <p>
-                        Welcome to Vivasaayipulla Angadi – The Future of Agriculture Marketplace. We connect people, products, and services in one place – easy, affordable, and trustworthy. Our mission is to make agriculture products and services accessible to everyone.
+                    <h2 data-i18n="aboutTitle">About Vivasaayipulla Angadi</h2>
+                    <p data-i18n="aboutDesc1">
+                        Welcome to Vivasaayipulla Angadi – The Future of Agriculture Marketplace and the <strong>World's First Voice-Based Ecommerce</strong> platform. We connect people, products, and services in one place – easy, affordable, and trustworthy. Our mission is to make agriculture products and services accessible to everyone.
                     </p>
-                    <p>
-                        We provide a platform where anyone can sell or buy products directly without middlemen. With powerful features like voice search, live chat, and multilingual support, we make farming smarter and business easier. Buy and sell all kinds of agriculture products directly from farmers, sellers, and local shops.
+                    <p data-i18n="aboutDesc2">
+                        We provide a platform where anyone can sell or buy products directly without middlemen. As the world's first voice-based ecommerce platform, we offer powerful features like voice search, live chat, and multilingual support, making farming smarter and business easier. Buy and sell all kinds of agriculture products directly from farmers, sellers, and local shops.
+                    </p>
+                    <p data-i18n="aboutDesc3">
+                        In our shop, we sell the best kitchen gadgets and provide various services to support village people, including emergency services. This platform is proudly made in Tamil Nadu, Made in India.
                     </p>
                     <div class="stats">
                         <div class="stat">
                             <h3>500+</h3>
-                            <p>Local Farmers</p>
+                            <p data-i18n="statFarmers">Local Farmers</p>
                         </div>
                         <div class="stat">
                             <h3>10K+</h3>
-                            <p>Organic Products</p>
+                            <p data-i18n="statProducts">Organic Products</p>
                         </div>
                         <div class="stat">
-                            <h3>100%</h3>
-                            <p>Organic Certified</p>
+                            <h3>Low Price</h3>
+                            <p data-i18n="statPrice">Direct Farmers</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <div class="about-placeholder" style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
-                        <div class="about-overlay">
-                            <i class="fas fa-tractor"></i>
-                        </div>
+                    <div class="about-placeholder" style="background-image: url('images/kalai.png');">
                     </div>
                 </div>
             </div>
@@ -244,29 +232,29 @@
     <section id="download" class="download">
         <div class="container">
             <div class="section-header">
-                <h2>Download Our Mobile App</h2>
-                <p>Get the Vivasaayipulla Angadi app for the best agriculture marketplace experience</p>
+                <h2 data-i18n="downloadTitle">Download Our Mobile App</h2>
+                <p data-i18n="downloadSubtitle">Get the Vivasaayipulla Angadi app for the best agriculture marketplace experience</p>
             </div>
             <div class="download-content">
                 <div class="download-info">
-                    <h3>Available on Mobile</h3>
-                    <p>Download our mobile app to access all features including voice search, live chat, and multilingual support. Buy and sell agriculture products on the go!</p>
+                    <h3 data-i18n="downloadInfoTitle">Available on Mobile</h3>
+                    <p data-i18n="downloadInfoDesc">Download our mobile app to access all features including voice search, live chat, and multilingual support. Buy and sell agriculture products on the go!</p>
                     <div class="app-features">
                         <div class="feature-item">
                             <i class="fas fa-microphone"></i>
-                            <span>Voice Search</span>
+                            <span data-i18n="featureVoice">Voice Search</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-comments"></i>
-                            <span>Live Chat</span>
+                            <span data-i18n="featureChat">Live Chat</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-globe"></i>
-                            <span>Multilingual</span>
+                            <span data-i18n="featureMulti">Multilingual</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-mobile-alt"></i>
-                            <span>Mobile First</span>
+                            <span data-i18n="featureMobile">Mobile First</span>
                         </div>
                     </div>
                 </div>
@@ -275,22 +263,22 @@
                         <div class="qr-code">
                             <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://play.google.com/store/apps/details?id=com.vivasaayipulla.angadi" alt="Android QR Code">
                         </div>
-                        <h4>Android App</h4>
-                        <p>Scan to download from Google Play Store</p>
+                        <h4 data-i18n="androidTitle">Android App</h4>
+                        <p data-i18n="androidDesc">Scan to download from Google Play Store</p>
                         <a href="https://play.google.com/store/apps/details?id=com.vivasaayipulla.angadi" class="download-btn android">
                             <i class="fab fa-google-play"></i>
-                            Download for Android
+                            <span data-i18n="androidBtn">Download for Android</span>
                         </a>
                     </div>
                     <div class="qr-section">
                         <div class="qr-code">
                             <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://apps.apple.com/app/vivasaayipulla-angadi/id123456789" alt="iOS QR Code">
                         </div>
-                        <h4>iOS App</h4>
-                        <p>Scan to download from App Store</p>
+                        <h4 data-i18n="iosTitle">iOS App</h4>
+                        <p data-i18n="iosDesc">Scan to download from App Store</p>
                         <a href="https://apps.apple.com/app/vivasaayipulla-angadi/id123456789" class="download-btn ios">
                             <i class="fab fa-apple"></i>
-                            Download for iOS
+                            <span data-i18n="iosBtn">Download for iOS</span>
                         </a>
                     </div>
                 </div>
@@ -302,44 +290,44 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>We'd love to hear from you</p>
+                <h2 data-i18n="contactTitle">Get In Touch</h2>
+                <p data-i18n="contactSubtitle">We'd love to hear from you</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h3>Address</h3>
-                            <p>123 Farm Road<br>Green Valley, State 12345</p>
+                            <h3 data-i18n="addressLabel">Address</h3>
+                            <p>No. 45, Agriculture Market Street<br>Coimbatore, Tamil Nadu 641001<br>India</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
+                            <h3 data-i18n="phoneLabel">Phone</h3>
+                            <p>+91 98765 43210</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h3>Email</h3>
-                            <p>info@agrimarket.com</p>
+                            <h3 data-i18n="emailLabel">Email</h3>
+                            <p>info@vivasaayipullaangadi.com</p>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" data-i18n-placeholder="formName" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" data-i18n-placeholder="formEmail" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea data-i18n-placeholder="formMessage" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="formSubmit">Send Message</button>
                 </form>
             </div>
         </div>
@@ -351,10 +339,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="logoo.svg" alt="Vivasaayipulla Angadi Logo" class="footer-logo-img">
-                        <h3>Vivasaayipulla Angadi</h3>
+                        <img src="logo.svg" alt="Vivasaayipulla Angadi Logo" class="footer-logo-img">
+                        <h3 data-i18n="navLogoName">Vivasaayipulla Angadi</h3>
                     </div>
-                    <p>Your trusted partner for fresh, organic produce and sustainable agriculture.</p>
+                    <p data-i18n="footerTagline">Your trusted partner for fresh, organic produce and sustainable agriculture.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -363,34 +351,23 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4 data-i18n="support">Support</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#" data-i18n="helpCenter">Help Center</a></li>
+                        <li><a href="#" data-i18n="contactUs">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get updates on new products and exclusive deals.</p>
+                    <h4 data-i18n="newsletter">Newsletter</h4>
+                    <p data-i18n="newsletterDesc">Subscribe to get updates on new products and exclusive deals.</p>
                     <div class="newsletter">
-                        <input type="email" placeholder="Enter your email">
-                        <button type="submit">Subscribe</button>
+                        <input type="email" data-i18n-placeholder="newsletterPlaceholder" placeholder="Enter your email">
+                        <button type="submit" data-i18n="newsletterBtn">Subscribe</button>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Vivasaayipulla Angadi. All rights reserved.</p>
+                <p>&copy; 2024 Vivasaayipulla Angadi. <span data-i18n="copyright">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
