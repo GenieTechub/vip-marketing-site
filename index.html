@@ -15,7 +15,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="logo.svg" alt="Vivasaayipulla Angadi Logo" class="logo-img">
+                <img src="images/logo.png" alt="Vivasaayipulla Angadi Logo" class="logo-img" loading="eager" decoding="async" width="70" height="70">
                 <h2 data-i18n="navLogoName">Vivasaayipulla Angadi</h2>
             </div>
             <ul class="nav-menu">
@@ -272,13 +272,16 @@
                     </div>
                     <div class="qr-section">
                         <div class="qr-code">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://apps.apple.com/app/vivasaayipulla-angadi/id123456789" alt="iOS QR Code">
+                            <div class="qr-placeholder" aria-label="iOS app coming soon">
+                                <i class="fab fa-apple"></i>
+                                <span data-i18n="comingSoon">Coming soon</span>
+                            </div>
                         </div>
                         <h4 data-i18n="iosTitle">iOS App</h4>
-                        <p data-i18n="iosDesc">Scan to download from App Store</p>
-                        <a href="https://apps.apple.com/app/vivasaayipulla-angadi/id123456789" class="download-btn ios">
+                        <p data-i18n="iosDesc">Coming soon</p>
+                        <a href="#" class="download-btn ios disabled" aria-disabled="true" tabindex="-1">
                             <i class="fab fa-apple"></i>
-                            <span data-i18n="iosBtn">Download for iOS</span>
+                            <span data-i18n="iosBtn">Coming soon</span>
                         </a>
                     </div>
                 </div>
@@ -299,21 +302,21 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3 data-i18n="addressLabel">Address</h3>
-                            <p>No. 45, Agriculture Market Street<br>Coimbatore, Tamil Nadu 641001<br>India</p>
+                            <p>No 15, Veerapatra Swamy Kovil Street<br>Lawspet, Puducherry 605008<br>India</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3 data-i18n="phoneLabel">Phone</h3>
-                            <p>+91 98765 43210</p>
+                            <p><a href="tel:+916383869173">+91-6383869173</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3 data-i18n="emailLabel">Email</h3>
-                            <p>info@vivasaayipullaangadi.com</p>
+                            <p><a href="mailto:vivasaayipulla.help@gmail.com">vivasaayipulla.help@gmail.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -339,35 +342,47 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="logo.svg" alt="Vivasaayipulla Angadi Logo" class="footer-logo-img">
+                        <img src="images/logo.png" alt="Vivasaayipulla Angadi Logo" class="footer-logo-img" loading="eager" decoding="async" width="150" height="150">
                         <h3 data-i18n="navLogoName">Vivasaayipulla Angadi</h3>
                     </div>
                     <p data-i18n="footerTagline">Your trusted partner for fresh, organic produce and sustainable agriculture.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@VivasaayipullaAngadi-qt9yh" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/vivasaayipulla_angadi?igsh=MWJwZXV3NmhscHNlNg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/16yjJxTSao/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4 data-i18n="support">Support</h4>
                     <ul>
                         <li><a href="#" data-i18n="helpCenter">Help Center</a></li>
-                        <li><a href="#" data-i18n="contactUs">Contact Us</a></li>
+                        <li><a href="#contact" data-i18n="contactUs">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="legal">Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html" data-i18n="privacyPolicy">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html" data-i18n="termsConditions">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4 data-i18n="newsletter">Newsletter</h4>
                     <p data-i18n="newsletterDesc">Subscribe to get updates on new products and exclusive deals.</p>
-                    <div class="newsletter">
+                    <form class="newsletter">
                         <input type="email" data-i18n-placeholder="newsletterPlaceholder" placeholder="Enter your email">
                         <button type="submit" data-i18n="newsletterBtn">Subscribe</button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Vivasaayipulla Angadi. <span data-i18n="copyright">All rights reserved.</span></p>
+                <p>&copy; 2026 Vivasaayipulla Angadi. <span data-i18n="copyright">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
